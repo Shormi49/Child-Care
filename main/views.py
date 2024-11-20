@@ -8,6 +8,9 @@ from .models import UserProfile
 from .forms import UserRegistrationForm
 
 
+def user_logout(request):
+    logout(request)
+    return redirect("home")
 
 def register(request):
     if request.method == "POST":
