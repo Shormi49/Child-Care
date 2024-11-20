@@ -10,7 +10,7 @@ from .forms import UserRegistrationForm
 
 def user_logout(request):
     logout(request)
-    return redirect("home")
+    return redirect("home")#logout
 
 def register(request):
     if request.method == "POST":
