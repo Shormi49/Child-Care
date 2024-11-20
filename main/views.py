@@ -7,6 +7,25 @@ from django.contrib.auth.forms import AuthenticationForm
 from .models import UserProfile
 from .forms import UserRegistrationForm
 
+
+
+def register(request):
+    if request.method == "POST":
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            UserProfile.objects.create(
+                user=user,
+                address=form.cleaned_data["address"],
+                contact=form.cleaned_data["contact"],
+            )
+            login(request, user)
+            return redirect("home")
+    else:
+        form = UserRegistrationForm()
+    return render(request, "main/register.html", {"form": form})
+
+
 def user_login(request):
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
