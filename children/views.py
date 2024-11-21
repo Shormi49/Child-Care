@@ -9,17 +9,14 @@ from django.shortcuts import render, redirect
 
 
 @login_required
-def add_Child(request):
+def add_child(request):
     if request.method == "POST":
         form = ChildForm(request.POST, request.FILES)
         if form.is_valid():
-            child = form.save(commit)
+            child = form.save(commit=False)
             child.user = request.user
             child.save()
-            return render("success")
+            return redirect("success")
     else:
-        form = childForm()
+        form = ChildForm()
     return render(request, "main/add_child.html", {"form": form})
-
-
-vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
