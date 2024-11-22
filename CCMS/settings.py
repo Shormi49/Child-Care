@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap4',
     'main',
-    'children'
+    'children',
+    'package'
 ]
 
 MIDDLEWARE = [
