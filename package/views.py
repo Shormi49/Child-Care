@@ -22,3 +22,6 @@ def add_package(request):
     else:
         form = PackageForm()
     return render(request, "#", {"form": form})
+
+def waiting_for_admin(request):
+    return render(request, "main/waiting_for_admin.html")
