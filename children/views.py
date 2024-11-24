@@ -1,5 +1,11 @@
+# from django.shortcuts import render
+
+# Create your views here.
 
 from django.contrib.auth.decorators import login_required
+
+from .forms import PackageForm
+
 
 from django.shortcuts import render, redirect
 
@@ -9,14 +15,14 @@ from django.shortcuts import render, redirect
 
 
 @login_required
-def add_child(request):
+def add_package(request):
     if request.method == "POST":
-        form = ChildForm(request.POST, request.FILES)
+        form = PackageForm(request.POST)
         if form.is_valid():
-            child = form.save(commit=False)
-            child.user = request.user
-            child.save()
-            return redirect("success")
+            package = form.save()
+            package.user = request.user
+            package.save()
+            return redirect("waiting_for_admin")
     else:
-        form = ChildForm()
-    return render(request, "main/add_child.html", {"form": form})
+        form = PackageForm()
+    return render(request, "#", {"form": form})
