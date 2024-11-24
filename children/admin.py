@@ -1,7 +1,4 @@
 from django.contrib import admin
+from .models import Child
 
-# Register your models here.
-from django.contrib import admin
-from .models import child
-
-admin.site.register(child)
+admin.site.register(Child)

@@ -1,8 +1,8 @@
 from django import forms
-from .models import  Children
+from .models import  Child
 
 
 class ChildForm(forms.ModelForm):
     class Meta:
         model = Child
-        fields = '__all__'
+        fields = ['name', 'image', 'age', 'gender']
