@@ -26,3 +26,7 @@ def add_child(request):
     else:
         form = ChildForm()
     return render(request, "main/add_child.html", {"form": form})
+
+def success(request):
+    return render(request, "main/success.html")
+
