@@ -1,59 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Styled Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+{% extends "base.html" %}
 
-        .container {
-            text-align: center;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 24px;
-            color: #007bff;
-        }
-
-        p {
-            font-size: 16px;
-            margin: 10px 0;
-        }
-
-        a {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            text-decoration: none;
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 5px;
-        }
-
-        a:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome to the Page</h1>
-        <p>This is a simple and clean page with minimal design.</p>
-        <a href="#">Learn More</a>
+{% block body %}
+    <div class="row">
+        <div class="col"><h2>All Packages</h1></div>
+        <div class="col-auto">
+            <a href="{% url 'add_package' %}" class="btn btn-primary">Add Package</a>
+        </div>
     </div>
-</body>
-</html>l>
+
+    <div class="pt-2">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Package Type</th>
+                <th scope="col">Transaction ID</th>
+                <th scope="col">Customer</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for package in packages %}
+                <tr>
+                    <th scope="row">{{ forloop.counter  }}</th>
+                    <td>{{ package.package_type }}</td>
+                    <td>{{ package.transaction_id }}</td>
+                    <td>{{ package.user.username }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock body %}
