@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block body %}
+   <div class="row">
+        <div class="col"><h2>Children details</h1></div>
+        <div class="col-auto">
+            <a href="{% url 'add_child' %}" class="btn btn-primary">Add Children</a>
+        </div>
+   </div>
+
+    <div class="pt-2">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col" colspan="2">Child Details</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Parent</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for child in children %}
+                <tr>
+                    <th scope="row">{{ forloop.counter  }}</th>
+                    <td>
+                        <div class="media">
+                            <img src="{{ child.image.url }}" alt="image" class="img-fluid" style="max-width: 100px; height: auto;">
+                        </div>
+                    </td>
+                    <td>{{ child.name }}</td>
+                    <td>{{ child.age }}</td>
+                    <td>{{ child.gender }}</td>
+                    <td>{{ child.user.username }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock body %}
