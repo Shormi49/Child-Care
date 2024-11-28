@@ -30,3 +30,10 @@ def add_child(request):
 def success(request):
     return render(request, "main/success.html")
 
+
+
+def children(request):
+    user = request.user
+    children = user.children.all()
+    return render(request, "main/children.html", {"children": children})
+
