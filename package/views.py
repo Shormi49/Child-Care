@@ -25,3 +25,8 @@ def add_package(request):
 
 def waiting_for_admin(request):
     return render(request, "main/waiting_for_admin.html")
+
+def packages(request):
+    user = request.user
+    packages = user.packages.all()
+    return render(request, "main/packages.html", {"packages": packages})
