@@ -2,10 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waiting for Admin</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            background: linear-gradient(to bottom, #000000, #1a1a1a);
+            background-image: url('https://source.unsplash.com/1920x1080/?stars,night'); /* Fixed starry background */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        h2 {
+            font-size: 36px;
+            color: #ff0000; /* Bright red for the main heading */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add depth to text */
+        }
+
+        p {
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Add depth to text */
+        }
+
+        .btn {
+            display: inline-block;
+            font-size: 16px;
+            color: #000000;
+            background-color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ff0000;
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+        }
+    </style>
 </head>
 <body>
-<h2>Waiting for Admin</h2>
-<p>Your package request is being processed. Please wait for an admin call.</p>
+    <div class="container">
+        <h2>Waiting for Admin</h2>
+        <p>Your package request is being processed. Please wait for an admin call.</p>
+        <a href="#" class="btn">Go Back</a>
+    </div>
 </body>
 </html>
