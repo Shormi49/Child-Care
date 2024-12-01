@@ -1,40 +1,120 @@
 {% extends "base.html" %}
 
 {% block body %}
-   <div class="row">
-        <div class="col"><h2>Children details</h1></div>
-        <div class="col-auto">
-            <a href="{% url 'add_child' %}" class="btn btn-primary">Add Children</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header h2 {
+            margin: 0;
+            color: #333333;
+        }
+        .btn-primary {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table thead tr {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #dddddd;
+        }
+        table tbody tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+        table tbody tr:hover {
+            background-color: #f1f7ff;
+        }
+        table th {
+            font-weight: bold;
+        }
+        table td {
+            color: #555555;
+        }
+        .media img {
+            border-radius: 8px;
+            display: block;
+            max-width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Children Details</h2>
+            <a href="{% url 'add_child' %}" class="btn-primary">Add Children</a>
         </div>
-   </div>
 
-    <div class="pt-2">
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col" colspan="2">Child Details</th>
-                <th scope="col">Age</th>
-                <th scope="col">Gender</th>
-                <th scope="col">Parent</th>
-              </tr>
-            </thead>
-            <tbody>
-                {% for child in children %}
-                <tr>
-                    <th scope="row">{{ forloop.counter  }}</th>
-                    <td>
-                        <div class="media">
-                            <img src="{{ child.image.url }}" alt="image" class="img-fluid" style="max-width: 100px; height: auto;">
-                        </div>
-                    </td>
-                    <td>{{ child.name }}</td>
-                    <td>{{ child.age }}</td>
-                    <td>{{ child.gender }}</td>
-                    <td>{{ child.user.username }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <div>
+            <table>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th colspan="2">Child Details</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Parent</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for child in children %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>
+                            <div class="media">
+                                <img src="{{ child.image.url }}" alt="image">
+                            </div>
+                        </td>
+                        <td>{{ child.name }}</td>
+                        <td>{{ child.age }}</td>
+                        <td>{{ child.gender }}</td>
+                        <td>{{ child.user.username }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
+</body>
+</html>
 {% endblock body %}
