@@ -1,5 +1,78 @@
 {% extends "base.html" %}
 
 {% block body %}
-<h1>Hello from Homepage</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Child Care</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            text-align: center;
+            background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+        }
+        .main-content h1 {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .main-content h2 {
+            font-size: 1.5rem;
+            color: #555;
+            max-width: 800px;
+        }
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        footer .about-text {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        footer .icons {
+            margin-top: 10px;
+        }
+        footer .icons span {
+            margin: 0 5px;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+        footer .icons span:hover {
+            color: #007bff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <h1>Hello from Child Care</h1>
+        <h2>Our mission is to create a supportive and nurturing environment for children and their families. We are dedicated to fostering growth, learning, and development by connecting parents with trusted caregivers and providing essential resources. Through innovative solutions and a focus on community, we aim to empower families and make child care accessible, reliable, and stress-free. Together, we are building a brighter future for every child.</h2>
+    </div>
+
+    <footer>
+        <div class="about-text">
+            Our mission is to create a supportive and nurturing environment for children and their families. 
+        </div>
+        <div class="icons">
+            <span>&copy; Child Care Project</span>
+            <span>&#9742; Contact Us 📞 +88015*******</span>
+        </div>
+    </footer>
+</body>
+</html>
 {% endblock body %}
