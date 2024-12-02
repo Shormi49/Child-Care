@@ -119,6 +119,7 @@
         <h2>Select Package</h2>
         <h3>Payment via Bkash</h3>
         <p>Account No: 122344</p>
+        <p>premium: 1000/day medium: 700/day </p><p>casual: 600/day </p>
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
@@ -126,7 +127,7 @@
         </form>
         <a href="{% url 'home' %}">Return to HomePage</a>
         <div class="footer">
-            <p>&copy; 2024 Your Project Name. All rights reserved.</p>
+            <p>&copy; Child Care. All rights reserved.</p>
         </div>
     </div>
 </body>
