@@ -2,14 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>success</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffccf9, #ccf2ff); /* Gradient: pink and light blue */
+            color: #333333; /* Default text color */
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for contrast */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            font-size: 24px;
+            color: #ff0000; /* Red color for success message */
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            color: #555555; /* Gray for descriptive text */
+            margin-bottom: 20px;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 14px;
+            text-decoration: none;
+            color: #ffffff; /* White text for the button */
+            background-color: #007bff; /* Blue button */
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
 </head>
 <body>
-<!-- main/templates/main/success.html -->
-<h2>Success</h2>
-<p>Your child information has been added successfully!</p>
-<a href="{% url 'control_panel' %}">Return to Control Panel</a>
-
-
+    <div class="container">
+        <h2>Success!</h2>
+        <p>Your child information has been added successfully!</p>
+        <a href="{% url 'home' %}">Return to Home</a>
+    </div>
 </body>
 </html>
