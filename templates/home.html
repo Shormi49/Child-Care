@@ -34,6 +34,23 @@
             color: #555;
             max-width: 800px;
         }
+        .donation-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .donation-section a {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #28a745;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .donation-section a:hover {
+            background-color: #218838;
+        }
         footer {
             background-color: #343a40;
             color: #ffffff;
@@ -62,6 +79,10 @@
     <div class="main-content">
         <h1>Hello from Child Care</h1>
         <h2>Our mission is to create a supportive and nurturing environment for children and their families. We are dedicated to fostering growth, learning, and development by connecting parents with trusted caregivers and providing essential resources. Through innovative solutions and a focus on community, we aim to empower families and make child care accessible, reliable, and stress-free. Together, we are building a brighter future for every child.</h2>
+    </div>
+
+    <div class="donation-section">
+        <a href="{% url 'make_donation' %}">MAKE DONATION</a>
     </div>
 
     <footer>
